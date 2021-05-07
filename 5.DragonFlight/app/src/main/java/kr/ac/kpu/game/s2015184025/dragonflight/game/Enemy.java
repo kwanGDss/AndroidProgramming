@@ -5,6 +5,7 @@ import android.graphics.RectF;
 import android.util.Log;
 
 import kr.ac.kpu.game.s2015184025.dragonflight.R;
+import kr.ac.kpu.game.s2015184025.dragonflight.framework.AnimationGameBitmap;
 import kr.ac.kpu.game.s2015184025.dragonflight.framework.BoxCollidable;
 import kr.ac.kpu.game.s2015184025.dragonflight.framework.GameBitmap;
 import kr.ac.kpu.game.s2015184025.dragonflight.framework.GameObject;
@@ -46,6 +47,10 @@ public class Enemy implements GameObject, BoxCollidable, Recyclable {
         this.y = y;
         this.speed = speed;
         this.level = level;
+
+        int resId = RESOURCE_IDS[level - 1];
+
+        this.bitmap = new AnimationGameBitmap(resId, FRAMES_PER_SECOND, 0);
     }
 
     @Override
