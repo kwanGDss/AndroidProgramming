@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 import kr.ac.kpu.game.s2015184025.dragonflight.R;
 import kr.ac.kpu.game.s2015184025.dragonflight.framework.BoxCollidable;
 import kr.ac.kpu.game.s2015184025.dragonflight.framework.GameBitmap;
@@ -50,6 +52,7 @@ public class Bullet implements GameObject, BoxCollidable, Recyclable {
 
         if (y < 0) {
             game.remove(this);
+            recycle();
         }
     }
 
